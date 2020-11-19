@@ -25,6 +25,9 @@
             background-attachment: fixed;
             background-size: cover;
         }
+        span {
+            display: none;
+        }
     </style>
 
 </head>
@@ -34,13 +37,13 @@
     <nav>
         <ul id="tabs" class="nav nav-tabs justify-content-end">
             <li class="nav-item">
-                <a class="nav-link active" href="#home">Home</a>
+                <a class="nav-link active" href="#home">Order Details</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#menu">Menu</a>
+                <a class="nav-link" href="#menu">Delivery Information</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#prices">Orders</a>
+                <a class="nav-link" href="#confirmation">Checkout</a>
             </li>
 
 
@@ -108,7 +111,7 @@
             </form >
 
             <form method="get" action="#contact">
-            <button  id="order">Order Online</button></form>
+            <button  id="order">Place Order</button></form>
 
 
 
@@ -117,26 +120,35 @@
         <div id="menu" class="tab-pane">
             <form id="delivery">
                 <h2>Delivery Address</h2>
-                <input type="text" placeholder="Name" required>
-                <input type="text" placeholder="Address" required>
-                <input type="text" placeholder="Phone" required>
+                <input id="name" type="text" placeholder="Name" required>
+                <input id="address" type="text" placeholder="Address" required>
+                <input id="phone" type="text" placeholder="Phone" required>
 
-                <form method="get" action="#prices">
+                <form method="get" action="#confirmation">
                     <button  id="deliver">Confirm</button></form>
 
 
             </form>
         </div>
 
-        <div id="prices" class="tab-pane">
-            <h2>Pizza Prices</h2>
-            <label for="small">Small $7.00</label>
-            <input type="checkbox" name="small" id="small" data-price="7.00">
-            <label for="medium">Medium</label>
-            <input type="checkbox" name="medium" id="medium" data-price="9.00">
-            <label for="quantity">Pizza's Bought</label>
-            <input type="number" id="quantity">
-            <label for="total">Total Price : $<span id="total"></span></label>
+        <div id="confirmation" class="tab-pane">
+
+            <form id="">
+                <h2>Order Confirmation</h2>
+
+                <label id="nameLabel">name</label>
+                <label id="addressLabel">address</label>
+                <label id="phoneLabel">phone</label>
+
+                <label id="pizzaLabel">Pizza Cost</label>
+                <label id="totalLabel">total: including delivery</label>
+
+                <div class="button-box">
+                    <button type="button" id="confirm1">Confirm</button>
+                    <span>Your Order Has Been Succefully Placed</span>
+                </div>
+
+            </form>
         </div>
 
 
